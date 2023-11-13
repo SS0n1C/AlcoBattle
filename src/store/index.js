@@ -1,14 +1,8 @@
 import { createStore } from 'vuex'
+import beertable from "@/store/modules/beertable"
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    beertable,
   }
 })

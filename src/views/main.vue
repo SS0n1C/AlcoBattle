@@ -1,12 +1,15 @@
 <template>
     <div class="conteiner">
-       body
+       <beertable/>
    </div>
  </template>
  
  <script>
+ import beertable from "@/components/beertable.vue"
  export default {
- 
+ components:{
+  beertable,
+ }
  }
  </script>
  <style>
