@@ -6,7 +6,7 @@
     </div>
     <div class="beerTab__body">
       <table>
-        
+        <th></th>
       </table>
     </div>
   </section>
