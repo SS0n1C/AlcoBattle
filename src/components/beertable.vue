@@ -1,8 +1,5 @@
 <template>
-<div class="test"
-v-for="beerlist in getBeerDesk" 
-:key= beerlist.id
-    >{{ beerlist.id }}</div>
+
 </template>
 
 <script>
