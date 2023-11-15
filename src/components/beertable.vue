@@ -5,9 +5,32 @@
       <h2>Beer Battle</h2>
     </div>
     <div class="beerTab__body">
-      <table>
-        <th></th>
-      </table>
+      <div class="beerTab__body--title">
+        <div class="BTT__item">
+          1
+        </div>
+        <div class="BTT__item">
+          1
+        </div>
+        <div class="BTT__item">
+          1
+        </div>
+        <div class="BTT__item">
+          1
+        </div>
+        <div class="BTT__item">
+          1
+        </div>
+        <div class="BTT__item">
+          1
+        </div>
+        <div class="BTT__item">
+          1
+        </div>
+      </div>
+      <div class="beerTab__body--main">
+2
+      </div>
     </div>
   </section>
 </div>
