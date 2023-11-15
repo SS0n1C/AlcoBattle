@@ -6,30 +6,10 @@
     </div>
     <div class="beerTab__body">
       <div class="beerTab__body--title">
-        <div class="BTT__item">
-          1
-        </div>
-        <div class="BTT__item">
-          1
-        </div>
-        <div class="BTT__item">
-          1
-        </div>
-        <div class="BTT__item">
-          1
-        </div>
-        <div class="BTT__item">
-          1
-        </div>
-        <div class="BTT__item">
-          1
-        </div>
-        <div class="BTT__item">
-          1
-        </div>
+        1
       </div>
       <div class="beerTab__body--main">
-2
+        2
       </div>
     </div>
   </section>
