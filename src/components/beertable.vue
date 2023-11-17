@@ -6,7 +6,7 @@
     </div>
     <div class="beerTab__body">
       <div class="beerTab__body--title">
-        1
+        1fddf
       </div>
       <div class="beerTab__body--main">
         2

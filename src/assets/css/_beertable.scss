@@ -11,18 +11,17 @@
     }
     &__body{
         display: grid;
+        grid-template: repeat(5, 1fr) / repeat(5, 1fr);
         width: 100%;
-        flex-direction: column;
         
         &--title{
             background-color: red;
             grid-column: 1/-1;
             grid-row: 1/2;
-            display: grid;
         }
         &--main{
             background-color: blue;
-            grid-column: 1/-1;
+            // grid-column: 1/-1;
             grid-row: 2/-1;
         }
 
