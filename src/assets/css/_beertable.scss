@@ -11,17 +11,24 @@
     }
     &__body{
         display: grid;
-        grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+        grid-template: repeat(5, 1fr) / repeat(10, 1fr);
         width: 100%;
         
         &--title{
             background-color: red;
-            grid-column: 1/-1;
-            grid-row: 1/2;
+            grid-row: 0/1;
+            margin: 10px 20px;
+            @include flex;
+            flex-wrap: wrap;
+
+            .perRaiting{
+                background-color: aquamarine;
+                width: 50%;
+                font-size: 10px;
+            }
         }
         &--main{
             background-color: blue;
-            // grid-column: 1/-1;
             grid-row: 2/-1;
         }
 

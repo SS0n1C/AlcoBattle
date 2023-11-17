@@ -6,8 +6,28 @@
     </div>
     <div class="beerTab__body">
       <div class="beerTab__body--title">
-        1fddf
+        name
       </div>
+      <div class="beerTab__body--title">
+        type
+        </div>
+        <div class="beerTab__body--title">
+        alco
+        </div>
+        <div class="beerTab__body--title">
+        design
+        <div class="perRaiting">Vit: 8</div>
+        <div class="perRaiting">Evg: 6</div>
+        </div>
+        <div class="beerTab__body--title">
+        soft
+        </div>
+        <div class="beerTab__body--title">
+        taste
+        </div>
+        <div class="beerTab__body--title BTTitle__item">
+        score
+        </div>
       <div class="beerTab__body--main">
         2
       </div>
