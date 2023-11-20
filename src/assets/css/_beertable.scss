@@ -11,29 +11,31 @@
     }
     &__body{
         display: grid;
-        grid-template: repeat(5, 1fr) / repeat(10, 1fr);
+        grid-template: repeat(auto, 1fr) / repeat(9, 1fr);
         width: 100%;
         
         &--title{
             background-color: red;
             grid-row: 0/1;
-            margin: 10px 20px;
             @include flex;
             flex-wrap: wrap;
-
-            .perRaiting{
-                background-color: aquamarine;
-                width: 50%;
-                font-size: 10px;
+            border: 1px black solid;
+        }
+        &--person{
+            background-color: aqua;
+            @include flex;
+            border: 1px black solid;
+        }
+        .double-section{
+                grid-column: span 2;
+                background-color: grey;
             }
+        .start{
+            grid-column: 4;
         }
         &--main{
             background-color: blue;
-            grid-row: 2/-1;
-        }
-
-        .BTT__item{
-            border: 1px black solid;
+            grid-row-start: 3;
         }
     }
 }
