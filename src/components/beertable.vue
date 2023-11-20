@@ -4,7 +4,8 @@
     <div class="beerTab__h">
       <h2>Beer Battle</h2>
     </div>
-    <div class="beerTab__body">
+    <div class="beerTab__body" 
+    v-for="item in getBeerDesk" :key="item.id">
       <!-- title section -->
       <div class="beerTab__body--title">
         name
@@ -42,15 +43,13 @@
         <div class="beerTab__body--person">
           Vitaliy
         </div>
-        <div class="beerTab__body--person">
+        <div class="beerTab__body--person end">
           Evgenia
         </div>
         <!--table section-->
-      <div class="beerTab__body--main" 
-      v-for="item in getBeerDesk" :key="item.id">
-        <div class="test">
-        </div>
-      </div>
+      <div class="beerTab__body--main">
+      {{ item.id }}
+      </div> 
     </div>
   </section>
 </div>
