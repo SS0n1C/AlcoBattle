@@ -4,52 +4,46 @@
     <div class="beerTab__h">
       <h2>Beer Battle</h2>
     </div>
-    <div class="beerTab__body" 
-    v-for="item in getBeerDesk" :key="item.id">
-      <!-- title section -->
-      <div class="beerTab__body--title">
-        name
-      </div>
-      <div class="beerTab__body--title">
-        type
+    <div class="beerTab__body"
+    v-for="(item, i) in getBeerDesk"
+    :key="i">
+    <div class="beerTab__body--item">
+      {{ item.name }}
+    </div>
+    <div class="beerTab__body--item">
+      {{ item.type }}
+    </div>
+    <div class="beerTab__body--item">
+      {{ item.alco }}
+    </div>
+    <div class="beerTab__body--item">
+      {{ item.country }}
+    </div>
+    <div class="beerTab__body--item">
+        <div class="Vit">
+          {{ item.design.vit }}
         </div>
-        <div class="beerTab__body--title">
-        alco
+        <div class="Evg">
+          {{ item.design.evg }}
         </div>
-        <div class="beerTab__body--title double-section">
-        design
+    </div>
+    <div class="beerTab__body--item">
+        <div class="Vit">
+          {{ item.soft.vit }}
         </div>
-        <div class="beerTab__body--title double-section">
-        soft
+        <div class="Evg">
+          {{ item.soft.evg }}
         </div>
-        <div class="beerTab__body--title double-section">
-        taste
+    </div>
+    <div class="beerTab__body--item">
+        <div class="Vit">
+          {{ item.taste.vit }}
         </div>
-        <div class="beerTab__body--title BTTitle__item">
-        score
+        <div class="Evg">
+          {{ item.taste.evg }}
         </div>
-        <div class="beerTab__body--person start">
-          Vitaliy
-        </div>
-        <div class="beerTab__body--person">
-          Evgenia
-        </div>
-        <div class="beerTab__body--person">
-          Vitaliy
-        </div>
-        <div class="beerTab__body--person">
-          Evgenia
-        </div>
-        <div class="beerTab__body--person">
-          Vitaliy
-        </div>
-        <div class="beerTab__body--person end">
-          Evgenia
-        </div>
-        <!--table section-->
-      <div class="beerTab__body--main">
-      {{ item.id }}
-      </div> 
+    </div>
+    <div class="score">{{ item.id }}</div>
     </div>
   </section>
 </div>

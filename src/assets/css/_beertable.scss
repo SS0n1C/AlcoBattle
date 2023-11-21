@@ -10,33 +10,7 @@
         text-shadow: 1px 1px 2px pink;
     }
     &__body{
-        display: grid;
-        grid-template: repeat(10, 1fr) / repeat(10, 1fr);
-        width: 100%;
+        display: flex;
         
-        &--title{
-            background-color: red;
-            grid-row: 0/1;
-            @include flex;
-            flex-wrap: wrap;
-            border: 1px black solid;
-        }
-        &--person{
-            background-color: aqua;
-            @include flex;
-            border: 1px black solid;
-        }
-        .double-section{
-                grid-column: span 2;
-                background-color: grey;
-            }
-        .start{
-            grid-column: 4;
-        }
-        &--main{
-            background-color: blue;
-            grid-row-start: 3;
-
-        }
     }
 }
