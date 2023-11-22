@@ -21,7 +21,7 @@
     </div>
     <div class="beerTab__body--item">
         <div class="Vit">
-          {{ item.design.vit }}
+          {{ item.design.vit }} / 
         </div>
         <div class="Evg">
           {{ item.design.evg }}
@@ -29,7 +29,7 @@
     </div>
     <div class="beerTab__body--item">
         <div class="Vit">
-          {{ item.soft.vit }}
+          {{ item.soft.vit }} / 
         </div>
         <div class="Evg">
           {{ item.soft.evg }}
@@ -37,13 +37,13 @@
     </div>
     <div class="beerTab__body--item">
         <div class="Vit">
-          {{ item.taste.vit }}
+          {{ item.taste.vit }} / 
         </div>
         <div class="Evg">
           {{ item.taste.evg }}
         </div>
     </div>
-    <div class="score">{{ item.id }}</div>
+    <div class="score">{{ getSum() }}</div>
     </div>
   </section>
 </div>
@@ -55,6 +55,12 @@ export default {
     computed:{
       ...mapGetters(["getBeerDesk"]),
     },
+    
+    methods:{
+      getSum(){
+   
+    },
+    }
 }
 </script>
 
