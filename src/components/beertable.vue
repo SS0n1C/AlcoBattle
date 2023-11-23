@@ -4,6 +4,9 @@
     <div class="beerTab__h">
       <h2>Beer Battle</h2>
     </div>
+    <div class="beerTab__title">
+      2
+    </div>
     <div class="beerTab__body"
     v-for="(item, i) in getBeerDesk"
     :key="i">
@@ -43,7 +46,7 @@
           {{ item.taste.evg }}
         </div>
     </div>
-    <div class="score">{{ getSum() }}</div>
+    <div class="score">{{ getSum(item)}}</div>
     </div>
   </section>
 </div>
@@ -57,8 +60,9 @@ export default {
     },
     
     methods:{
-      getSum(){
-   
+      getSum(item){
+        return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
+        item.taste.vit + item.taste.evg
     },
     }
 }

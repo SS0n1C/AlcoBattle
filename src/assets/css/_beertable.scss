@@ -9,6 +9,11 @@
         margin:30px 0 20px;
         text-shadow: 1px 1px 2px pink;
     }
+    &__title{
+        width: 100%;
+        display: grid;
+        grid-template: 1fr / repeat(8, 1fr);
+    }
     &__body{
         width: 100%;
         display: grid;
@@ -19,7 +24,6 @@
         }
     }
     .score{
-        background-color: red;
         width: 20px;
         height: 20px;
     }
