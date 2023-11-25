@@ -5,7 +5,9 @@
       <h2>Beer Battle</h2>
     </div>
     <div class="beerTab__title">
-      2
+    <div v-for="t in test()">
+        {{ t }}
+    </div>
     </div>
     <div class="beerTab__body"
     v-for="(item, i) in getBeerDesk"
@@ -64,6 +66,14 @@ export default {
         return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
         item.taste.vit + item.taste.evg
     },
+    test(){
+      let newTest = []
+      this.getBeerDesk.forEach(element => {
+       newTest = (Object.keys(element))
+      });
+      let delID = newTest.splice(0, 1)
+      return newTest
+    }
     }
 }
 </script>
