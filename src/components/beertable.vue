@@ -5,9 +5,23 @@
       <h2>Beer Battle</h2>
     </div>
     <div class="beerTab__title">
-    <div v-for="t in test()">
-        {{ t }}
+    <div class="beerTab__title--item" v-for="(title, i) in getTitle()" :key="i">
+        {{ title }}
     </div>
+    <div class="beerTab__title--item">
+      Score
+    </div>
+    </div>
+    <div class="beerTab__person">
+      <div class="beerTab__person--name">
+        Vit / Evg 
+      </div>
+      <div class="beerTab__person--name">
+        Vit / Evg 
+      </div>
+      <div class="beerTab__person--name">
+        Vit / Evg 
+      </div>
     </div>
     <div class="beerTab__body"
     v-for="(item, i) in getBeerDesk"
@@ -25,26 +39,29 @@
       {{ item.country }}
     </div>
     <div class="beerTab__body--item">
-        <div class="Vit">
-          {{ item.design.vit }} / 
+        <div class="name">
+          {{ item.design.vit }} 
         </div>
-        <div class="Evg">
+        /
+        <div class="name">
           {{ item.design.evg }}
         </div>
     </div>
     <div class="beerTab__body--item">
-        <div class="Vit">
-          {{ item.soft.vit }} / 
+        <div class="name">
+          {{ item.soft.vit }}
         </div>
-        <div class="Evg">
+        /
+        <div class="name">
           {{ item.soft.evg }}
         </div>
     </div>
     <div class="beerTab__body--item">
-        <div class="Vit">
-          {{ item.taste.vit }} / 
+        <div class="name">
+          {{ item.taste.vit }} 
         </div>
-        <div class="Evg">
+        /
+        <div class="name">
           {{ item.taste.evg }}
         </div>
     </div>
@@ -66,12 +83,10 @@ export default {
         return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
         item.taste.vit + item.taste.evg
     },
-    test(){
+    getTitle(){
       let newTest = []
-      this.getBeerDesk.forEach(element => {
-       newTest = (Object.keys(element))
-      });
-      let delID = newTest.splice(0, 1)
+      this.getBeerDesk.map(e=> newTest = Object.keys(e))
+      newTest.shift()
       return newTest
     }
     }

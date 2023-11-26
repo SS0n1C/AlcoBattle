@@ -13,6 +13,32 @@
         width: 100%;
         display: grid;
         grid-template: 1fr / repeat(8, 1fr);
+        &--item{
+            @include flex;
+            margin: 20px auto 20px;
+            @include font($Agbalumo,400,24px,24px,red);
+        }
+    }
+    &__person{
+        display: grid;
+        width: 100%;
+        grid-template: 1fr / repeat(8, 1fr);
+
+        &--name{
+            @include flex;
+            @include font($Agbalumo,400,14px,14px,red);
+        }
+        
+       &--name:first-child{
+            grid-column: 5/6;
+        }
+        &--name:nth-child(2){
+            grid-column: 6 / 7;
+        }
+        &--name:nth-child(3){
+            grid-column: 7 / 8;
+        }
+            
     }
     &__body{
         width: 100%;
@@ -21,6 +47,20 @@
         &--item{
             width: 100%;
             display: flex;
+            border-bottom: 1px black solid;
+            @include flex;
+            @include font($Agbalumo,400,14px,14px,red);
+
+            .name{
+                min-width: 25px;
+                @include flex;
+            }
+        }  
+        .score{
+            width: 100%;
+            width: 200px;
+            @include flex;
+            @include font($Agbalumo,400,14px,14px,red);
         }
     }
     .score{
