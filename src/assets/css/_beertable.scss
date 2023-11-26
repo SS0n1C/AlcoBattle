@@ -18,15 +18,17 @@
             margin: 20px auto 20px;
             @include font($Agbalumo,400,24px,24px,red);
         }
+
     }
     &__person{
         display: grid;
         width: 100%;
         grid-template: 1fr / repeat(8, 1fr);
+        @include margb(10px);
 
         &--name{
             @include flex;
-            @include font($Agbalumo,400,14px,14px,red);
+            @include font($Agbalumo,400,14px,14px,black);
         }
         
        &--name:first-child{
@@ -38,33 +40,46 @@
         &--name:nth-child(3){
             grid-column: 7 / 8;
         }
+        .name-score{
+            justify-content: flex-start;
+        }
             
     }
     &__body{
         width: 100%;
         display: grid;
         grid-template: 1fr / repeat(8, 1fr);
+
+        &:nth-child(even){
+            background-color: burlywood;
+
+        }
         &--item{
+            padding: 10px;
             width: 100%;
             display: flex;
-            border-bottom: 1px black solid;
             @include flex;
             @include font($Agbalumo,400,14px,14px,red);
+
 
             .name{
                 min-width: 25px;
                 @include flex;
             }
         }  
-        .score{
-            width: 100%;
-            width: 200px;
-            @include flex;
-            @include font($Agbalumo,400,14px,14px,red);
+        .body-name{
+            justify-content: flex-start;
+           
         }
     }
     .score{
-        width: 20px;
-        height: 20px;
+        margin: 5px;
+        margin-bottom: 5px;
+        width: 30px;
+        height: 30px;
+        @include flex;
+        border-radius: 50%;
+        background-color: black;
+        @include font($Agbalumo,400,14px,14px,red);
     }
 }

@@ -8,9 +8,6 @@
     <div class="beerTab__title--item" v-for="(title, i) in getTitle()" :key="i">
         {{ title }}
     </div>
-    <div class="beerTab__title--item">
-      Score
-    </div>
     </div>
     <div class="beerTab__person">
       <div class="beerTab__person--name">
@@ -22,11 +19,14 @@
       <div class="beerTab__person--name">
         Vit / Evg 
       </div>
+      <div class="beerTab__person--name name-score">
+        score
+      </div>
     </div>
     <div class="beerTab__body"
     v-for="(item, i) in getBeerDesk"
     :key="i">
-    <div class="beerTab__body--item">
+    <div class="beerTab__body--item body-name">
       {{ item.name }}
     </div>
     <div class="beerTab__body--item">
@@ -65,8 +65,8 @@
           {{ item.taste.evg }}
         </div>
     </div>
-    <div class="score">{{ getSum(item)}}</div>
-    </div>
+    <div class="beerTab__body--item score">{{ getSum(item)}}</div>
+    </div> 
   </section>
 </div>
 </template>
