@@ -32,10 +32,11 @@
       </div>
     </div>
     <div class="beerTab__body"
-    v-for="(item, i) in getBeerDesk"
+    v-for="(item, i) in getBeerDesk" :src="item.image"
     :key="i">
     <div class="beerTab__body--item body-name" @click="getName(item,showBeerPhoto)">
       {{ item.name }}
+      <img :src="item.image" alt="">
     </div>
     <div class="beerTab__body--item">
       {{ item.type }}
@@ -101,6 +102,7 @@ export default {
     getName(item,showBeerPhoto){
       console.log(item.name)
       console.log(showBeerPhoto)
+      console.log(item.image)
       this.openbeerPhoto()
     },
     closeBeerPh(){
