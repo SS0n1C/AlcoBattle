@@ -9,6 +9,24 @@
         margin:30px 0 20px;
         text-shadow: 1px 1px 2px pink;
     }
+    &__img{
+        position: relative;
+        &--cross{
+            position: absolute;
+            top:10px;
+            right: 10px;
+            border-radius: red;
+            @include flex;
+            cursor: pointer;
+        }
+        & svg{
+            width: 20px;
+            height: 20px;
+        }
+        & img{
+            border-radius: 10px;
+        }
+    }
     &__title{
         width: 100%;
         display: grid;
@@ -70,17 +88,23 @@
         .body-name{
             justify-content: flex-start;
             font-size: 16px;
-           
+            word-break: break-word;
+
+            &:hover{
+                cursor: pointer;
+                color:blue;
+            }
+        }
+        .score{
+            margin: 5px;
+            margin-bottom: 5px;
+            width: 30px;
+            height: 30px;
+            @include flex;
+            border-radius: 50%;
+            background-color: black;
+            @include font($Agbalumo,400,14px,14px,red);
         }
     }
-    .score{
-        margin: 5px;
-        margin-bottom: 5px;
-        width: 30px;
-        height: 30px;
-        @include flex;
-        border-radius: 50%;
-        background-color: black;
-        @include font($Agbalumo,400,14px,14px,red);
-    }
+
 }

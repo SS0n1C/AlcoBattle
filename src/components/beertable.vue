@@ -4,6 +4,14 @@
     <div class="beerTab__h">
       <h2>Beer Battle</h2>
     </div>
+    <div class="beerTab__img" v-if="showBeerPhoto">   
+      <img src="../assets/img/placeholder.jpg" alt="beer">
+      <div class="beerTab__img--cross" @click="closeBeerPh()">
+        <svg>
+          <use xlink:href = "@/assets/img/sprite.svg#redCross"></use>  
+        </svg>
+      </div>
+    </div>
     <div class="beerTab__title">
     <div class="beerTab__title--item" v-for="(title, i) in getTitle()" :key="i">
         {{ title }}
@@ -26,7 +34,7 @@
     <div class="beerTab__body"
     v-for="(item, i) in getBeerDesk"
     :key="i">
-    <div class="beerTab__body--item body-name">
+    <div class="beerTab__body--item body-name" @click="getName(item,showBeerPhoto)">
       {{ item.name }}
     </div>
     <div class="beerTab__body--item">
@@ -72,13 +80,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 export default {
     computed:{
-      ...mapGetters(["getBeerDesk"]),
+      ...mapGetters(["getBeerDesk","showBeerPhoto"]),
     },
     
     methods:{
+      ...mapMutations(["openbeerPhoto","closeBeerPhoto"]),
       getSum(item){
         return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
         item.taste.vit + item.taste.evg
@@ -88,6 +97,14 @@ export default {
       this.getBeerDesk.map(e=> newTest = Object.keys(e))
       newTest.shift()
       return newTest
+    },
+    getName(item,showBeerPhoto){
+      console.log(item.name)
+      console.log(showBeerPhoto)
+      this.openbeerPhoto()
+    },
+    closeBeerPh(){
+      this.closeBeerPhoto()
     }
     }
 }

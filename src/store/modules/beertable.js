@@ -11,15 +11,29 @@ export default{
             {id:7, name: "Diesel tradici",type:"ligth", alco:"6%",country:"Lithuania", design:{vit:7, evg:7},soft:{vit:8,evg:8},taste:{vit:3,evg:5}},
             {id:8, name: "Diesel dank",type:"dark", alco:"6%",country:"Lithuania", design:{vit:8, evg:7},soft:{vit:10,evg:9},taste:{vit:7,evg:6}},
             {id:9, name: "Diesel strong",type:"ligth", alco:"7.4%",country:"Lithuania", design:{vit:8, evg:8},soft:{vit:6,evg:7},taste:{vit:5,evg:7}},
-            {id:10, name: "Pivna Dizhka",type:"dark", alco:"4.2%",country:"Ukrain", design:{vit:8, evg:9},soft:{vit:9,evg:9},taste:{vit:8,evg:8}},
-        ]
+            {id:10, name: "Pivna Dizhka",type:"dark", alco:"4.2%",country:"Ukraine", design:{vit:8, evg:9},soft:{vit:9,evg:9},taste:{vit:8,evg:8}},
+        ],
+        beerPhoto: false,
     },
     getters: {
         getBeerDesk(state){
             return state.beerdesk
+        },
+        showBeerPhoto(state){
+            return state.beerPhoto
         }
     },
     mutations: {
+        openbeerPhoto(state){
+        if(state.beerPhoto == false){
+            state.beerPhoto = true
+        }
+        },
+        closeBeerPhoto(state){
+            if(state.beerPhoto==true){
+                state.beerPhoto = false
+            }
+        }
     },
     actions: {
     },
