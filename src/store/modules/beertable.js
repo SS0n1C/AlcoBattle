@@ -1,7 +1,7 @@
 export default{
     state: {
         beerdesk:[
-            {id:0, name: "Grimbergen Blanche",type:"ligth", alco:"6%",country:"Poland", design:{vit:7, evg:7},soft:{vit:8,evg:9},taste:{vit:8,evg:8},image: кф('@/assets/img/beerPhoto/GrimBlanch.JPG')},
+            {id:0, name: "Grimbergen Blanche",type:"ligth", alco:"6%",country:"Poland", design:{vit:7, evg:7},soft:{vit:8,evg:9},taste:{vit:8,evg:8},image: ("@/assets/img/beerPhoto/GrimBlanch.JPG")},
             {id:1, name: "Sitnan",type:"ligth", alco:"5%",country:"Slovakia ", design:{vit:6, evg:6},soft:{vit:5,evg:4},taste:{vit:5,evg:4},image: ('@/assets/img/beerPhoto/sitnat.JPG')},
             {id:2, name: "Mecklenburger",type:"wheat", alco:"5.1%",country:"German", design:{vit:4, evg:5},soft:{vit:8,evg:8},taste:{vit:9,evg:7},image: (`@/assets/img/beerPhoto/mecklen.JPG`)},
             {id:3, name: "Xibeca damm",type:"ligth", alco:"4.6%",country:"Spain", design:{vit:6, evg:6},soft:{vit:6,evg:7},taste:{vit:7,evg:7},image: ("@/assets/img/beerPhoto/xibeca.JPG")},
