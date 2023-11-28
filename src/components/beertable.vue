@@ -5,7 +5,7 @@
       <h2>Beer Battle</h2>
     </div>
     <div class="beerTab__img" v-if="showBeerPhoto">   
-      <img src="../assets/img/placeholder.jpg" alt="beer">
+      <img :src="getPh" alt="beer">
       <div class="beerTab__img--cross" @click="closeBeerPh()">
         <svg>
           <use xlink:href = "@/assets/img/sprite.svg#redCross"></use>  
@@ -34,9 +34,8 @@
     <div class="beerTab__body"
     v-for="(item, i) in getBeerDesk" :src="item.image"
     :key="i">
-    <div class="beerTab__body--item body-name" @click="getName(item,showBeerPhoto)">
+    <div class="beerTab__body--item body-name" @click="getName(item)">
       {{ item.name }}
-      <img :src="item.image" alt="">
     </div>
     <div class="beerTab__body--item">
       {{ item.type }}
@@ -83,6 +82,11 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex';
 export default {
+  data(){
+    return{
+        getPh:require('@/assets/img/beerPhoto/GrimBlanch.jpg')
+    }
+  },
     computed:{
       ...mapGetters(["getBeerDesk","showBeerPhoto"]),
     },
@@ -99,10 +103,8 @@ export default {
       newTest.shift()
       return newTest
     },
-    getName(item,showBeerPhoto){
-      console.log(item.name)
-      console.log(showBeerPhoto)
-      console.log(item.image)
+    getName(item){
+      this.getPh = item.image
       this.openbeerPhoto()
     },
     closeBeerPh(){
