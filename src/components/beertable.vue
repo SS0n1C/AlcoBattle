@@ -14,7 +14,7 @@
     </div>
     <div class="beerTab__title">
     <div class="beerTab__title--item" v-for="(title, i) in getTitle()" :key="i">
-        {{ title }}
+        <span @click="sortList(title)">{{ title }}</span>
     </div>
     </div>
     <div class="beerTab__person">
@@ -92,7 +92,7 @@ export default {
     },
     
     methods:{
-      ...mapMutations(["openbeerPhoto","closeBeerPhoto"]),
+      ...mapMutations(["openbeerPhoto","closeBeerPhoto","sortBeerTab"]),
       getSum(item){
         return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
         item.taste.vit + item.taste.evg
@@ -101,6 +101,7 @@ export default {
       let newTest = []
       this.getBeerDesk.map(e=> newTest = Object.keys(e))
       newTest.shift()
+      newTest.pop()
       return newTest
     },
     getName(item){
@@ -109,6 +110,9 @@ export default {
     },
     closeBeerPh(){
       this.closeBeerPhoto()
+    },
+    sortList(title){
+      this.sortBeerTab(title)
     }
     }
 }

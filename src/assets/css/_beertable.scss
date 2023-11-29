@@ -39,6 +39,11 @@
             @include flex;
             margin: 20px auto 20px;
             @include font($Agbalumo,400,24px,24px,red);
+
+            &:hover{
+                color:aqua;
+                cursor: pointer;
+            }
         }
 
     }

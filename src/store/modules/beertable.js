@@ -33,6 +33,10 @@ export default{
             if(state.beerPhoto==true){
                 state.beerPhoto = false
             }
+        },
+        sortBeerTab(state,val){
+            console.log(val)
+            state.beerdesk.sort((a,b) => a[val] < b[val]? 1: -1)
         }
     },
     actions: {
