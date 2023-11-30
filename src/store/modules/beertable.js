@@ -14,6 +14,7 @@ export default{
             {id:10, name: "Pivna Dizhka",type:"dark", alco:"4.2%",country:"Ukraine", design:{vit:8, evg:9},soft:{vit:9,evg:9},taste:{vit:8,evg:8},image:require("@/assets/img/beerPhoto/mecklen.jpg")},
         ],
         beerPhoto: false,
+        sorted:false,
     },
     getters: {
         getBeerDesk(state){
@@ -35,8 +36,13 @@ export default{
             }
         },
         sortBeerTab(state,val){
-            console.log(val)
-            state.beerdesk.sort((a,b) => a[val] < b[val]? 1: -1)
+            if(state.sorted == false){
+                state.beerdesk.sort((a,b) => a[val] < b[val]? 1: -1)
+            state.sorted = true
+            } else if(state.sorted == true){
+                state.beerdesk.sort((a,b) => a[val] < b[val]? -1: 1)
+            state.sorted = false
+            }
         }
     },
     actions: {
