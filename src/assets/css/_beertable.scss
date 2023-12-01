@@ -1,5 +1,11 @@
+body{
+    background-color:#620217;
+}
 .conteiner{
     @include conteiner(1200px);
+    min-height: 100vh;
+    background-color: white;
+
 }
 .beerTab{
     @include flex;

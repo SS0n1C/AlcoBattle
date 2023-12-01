@@ -36,13 +36,20 @@ export default{
             }
         },
         sortBeerTab(state,val){
-            if(state.sorted == false){
-                state.beerdesk.sort((a,b) => a[val] < b[val]? 1: -1)
-            state.sorted = true
-            } else if(state.sorted == true){
-                state.beerdesk.sort((a,b) => a[val] < b[val]? -1: 1)
-            state.sorted = false
+            if(val == "name" || val== "type" || val == "alco" || val == "country"){
+                if(state.sorted == false){
+                    state.beerdesk.sort((a,b) => a[val] < b[val]? 1: -1)
+                state.sorted = true
+                console.log("fdssf")
+                } else if(state.sorted == true){
+                    state.beerdesk.sort((a,b) => a[val] < b[val]? -1: 1)
+                state.sorted = false
+                }
+            }   else{
+                   
+
             }
+
         }
     },
     actions: {
