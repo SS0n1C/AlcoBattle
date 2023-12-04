@@ -15,6 +15,7 @@ export default{
         ],
         beerPhoto: false,
         sorted:false,
+
     },
     getters: {
         getBeerDesk(state){
@@ -22,7 +23,7 @@ export default{
         },
         showBeerPhoto(state){
             return state.beerPhoto
-        }
+        },
     },
     mutations: {
         openbeerPhoto(state){

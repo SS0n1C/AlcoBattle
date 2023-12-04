@@ -4,7 +4,7 @@
     <div class="beerTab__h">
       <h2>Beer Battle</h2>
     </div>
-    <div class="beerTab__img" v-if="showBeerPhoto">   
+    <div class="beerTab__img" v-if="showBeerPhoto" :style="show ? filterStyle : null" @click="zoomOption">   
       <img :src="getPh" alt="beer">
       <div class="beerTab__img--cross" @click="closeBeerPh()">
         <svg>
@@ -84,11 +84,16 @@ import { mapGetters, mapMutations } from 'vuex';
 export default {
   data(){
     return{
-        getPh:require('@/assets/img/beerPhoto/GrimBlanch.jpg')
+      show:false,
+        filterStyle: {
+          width:"300px",
+          height:"450px",
+          cursor:"zoom-out"
+        },
     }
   },
     computed:{
-      ...mapGetters(["getBeerDesk","showBeerPhoto"]),
+      ...mapGetters(["getBeerDesk","showBeerPhoto","zooms"]),
     },
     
     methods:{
@@ -113,7 +118,11 @@ export default {
     },
     sortList(title){
       this.sortBeerTab(title)
-    }
+    },
+    zoomOption(){
+      console.log(this.show)
+      this.show?this.show = false:this.show = true
+    },
     }
 }
 </script>
