@@ -90,14 +90,15 @@ export default {
           height:"450px",
           cursor:"zoom-out"
         },
+        showBeerPhoto:false,
     }
   },
     computed:{
-      ...mapGetters(["getBeerDesk","showBeerPhoto","zooms"]),
+      ...mapGetters(["getBeerDesk","zooms"]),
     },
     
     methods:{
-      ...mapMutations(["openbeerPhoto","closeBeerPhoto","sortBeerTab"]),
+      ...mapMutations(["closeBeerPhoto","sortBeerTab"]),
       getSum(item){
         return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
         item.taste.vit + item.taste.evg
@@ -110,17 +111,18 @@ export default {
       return newTest
     },
     getName(item){
+      this.showBeerPhoto = false
       this.getPh = item.image
-      this.openbeerPhoto()
+      this.showBeerPhoto = true
+      this.show = false
     },
     closeBeerPh(){
-      this.closeBeerPhoto()
+      this.showBeerPhoto = false
     },
     sortList(title){
       this.sortBeerTab(title)
     },
     zoomOption(){
-      console.log(this.show)
       this.show?this.show = false:this.show = true
     },
     }

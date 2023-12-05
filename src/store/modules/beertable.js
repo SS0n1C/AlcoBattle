@@ -21,9 +21,6 @@ export default{
         getBeerDesk(state){
             return state.beerdesk
         },
-        showBeerPhoto(state){
-            return state.beerPhoto
-        },
     },
     mutations: {
         openbeerPhoto(state){
