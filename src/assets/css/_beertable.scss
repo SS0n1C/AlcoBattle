@@ -1,5 +1,6 @@
 body{
     background-color:#620217;
+    overflow-x: auto;
 }
 .conteiner{
     @include conteiner(1200px);
@@ -47,7 +48,8 @@ body{
     &__title{
         width: 100%;
         display: grid;
-        grid-template: 1fr / repeat(8, 1fr);
+        grid-template: 1fr / repeat(8, minmax(20px, 1fr));
+        gap:10px;
         &--item{
             @include flex;
             margin: 20px auto 20px;
@@ -69,13 +71,20 @@ body{
     &__person{
         display: grid;
         width: 100%;
-        grid-template: 1fr / repeat(8, 1fr);
+        grid-template: 1fr / repeat(8, minmax(21px, 1fr));
         @include margb(10px);
-
+        gap: 10px;
         &--name{
             @include flex;
             @include font($Agbalumo,400,14px,14px,black);
             text-transform: uppercase;
+
+            @include media($table){
+                font-size: 18px;
+            }
+            @include media($mobile){
+                font-size: 8px;
+            }
         }
         
        &--name:first-child{
@@ -95,8 +104,7 @@ body{
     &__body{
         width: 100%;
         display: grid;
-        grid-template: 1fr / repeat(8, 1fr);
-
+        grid-template: 1fr / repeat(8,  minmax(20px, 1fr));
         &:nth-child(even){
             background-color: burlywood;
 
