@@ -6,10 +6,10 @@
     </div>
     <div class="beerTab__find">
       <div class="beerTab__find--field">
-          <input type="text" name="search" class="search__field">
+          <input type="text" name="search" class="search__field" v-model="searchTexts">
         </div>
         <div class="beerTab__find--button">
-          <svg>
+          <svg @click="Searching(searchTexts)">
               <use xlink:href = "@/assets/img/sprite.svg#search"></use>  
             </svg>
         </div>
@@ -101,6 +101,7 @@ export default {
           cursor:"zoom-out"
         },
         showBeerPhoto:false,
+        searchTexts: "",
     }
   },
     computed:{
@@ -112,6 +113,12 @@ export default {
       getSum(item){
         return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
         item.taste.vit + item.taste.evg
+    },
+    Searching(searchTexts){
+      let newArr = []
+      this.getBeerDesk.map(e=>e.name.includes(searchTexts) && searchTexts? newArr.push(e): "")
+      console.log(newArr)
+
     },
     getTitle(){
       let newTest = []
