@@ -4,6 +4,16 @@
     <div class="beerTab__h">
       <h2>Beer Battle</h2>
     </div>
+    <div class="beerTab__find">
+      <div class="beerTab__find--field">
+          <input type="text" name="search" class="search__field">
+        </div>
+        <div class="beerTab__find--button">
+          <svg>
+              <use xlink:href = "@/assets/img/sprite.svg#search"></use>  
+            </svg>
+        </div>
+    </div>
     <div class="beerTab__img" v-if="showBeerPhoto" :style="show ? filterStyle : null" @click="zoomOption">   
       <img :src="getPh" alt="beer">
       <div class="beerTab__img--cross" @click="closeBeerPh()">
