@@ -109,16 +109,10 @@ export default {
     },
     
     methods:{
-      ...mapMutations(["closeBeerPhoto","sortBeerTab"]),
+      ...mapMutations(["closeBeerPhoto","sortBeerTab","searchBeer"]),
       getSum(item){
         return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
         item.taste.vit + item.taste.evg
-    },
-    Searching(searchTexts){
-      let newArr = []
-      this.getBeerDesk.map(e=>e.name.includes(searchTexts) && searchTexts? newArr.push(e): "")
-      console.log(newArr)
-
     },
     getTitle(){
       let newTest = []
@@ -142,6 +136,10 @@ export default {
     zoomOption(){
       this.show?this.show = false:this.show = true
     },
+    Searching(){
+      this.searchBeer(this.searchTexts)
+      this.searchTexts = ""
+    }
     }
 }
 </script>
