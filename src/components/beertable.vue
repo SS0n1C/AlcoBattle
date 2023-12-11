@@ -6,7 +6,7 @@
     </div>
     <div class="beerTab__find">
       <div class="beerTab__find--field">
-          <input type="text" name="search" class="search__field" v-model="searchTexts">
+          <input type="text" name="search" class="search__field" v-model="searchTexts" @keyup="Searching(searchTexts)">
         </div>
         <div class="beerTab__find--button">
           <svg @click="Searching(searchTexts)">
@@ -105,7 +105,7 @@ export default {
     }
   },
     computed:{
-      ...mapGetters(["getBeerDesk","zooms"]),
+      ...mapGetters(["getBeerDesk"]),
     },
     
     methods:{
@@ -138,8 +138,7 @@ export default {
     },
     Searching(){
       this.searchBeer(this.searchTexts)
-      this.searchTexts = ""
-    }
+    },
     }
 }
 </script>

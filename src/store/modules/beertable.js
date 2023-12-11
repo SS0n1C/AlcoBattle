@@ -55,9 +55,7 @@ export default{
 
         },
         searchBeer(state,searchVal){
-            let newArr = []
-            state.beerdesk.map(e=>e.name.toLowerCase().includes(searchVal.toLowerCase()) && searchVal? newArr.push(e): "")
-            newArr.length > 0? state.beerdesk = newArr: newArr = []
+            state.beerdesk = state.beerdesk.filter(e=>e.name.toLowerCase().includes(searchVal.toLowerCase()))
         }
     },
     actions: {
