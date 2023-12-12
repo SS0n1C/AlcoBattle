@@ -15,12 +15,16 @@ export default{
         ],
         beerPhoto: false,
         sorted:false,
+        newArr:[]
 
     },
     getters: {
         getBeerDesk(state){
             return state.beerdesk
         },
+        getSortList(state){
+            return state.newArr
+        }
     },
     mutations: {
         openbeerPhoto(state){
@@ -55,7 +59,8 @@ export default{
 
         },
         searchBeer(state,searchVal){
-            state.beerdesk = state.beerdesk.filter(e=>e.name.toLowerCase().includes(searchVal.toLowerCase()))
+            state.newArr =  state.beerdesk.filter(e=>e.name.toLowerCase().includes(searchVal.toLowerCase()))
+            state.beerdesk = state.newArr
         }
     },
     actions: {

@@ -105,7 +105,7 @@ export default {
     }
   },
     computed:{
-      ...mapGetters(["getBeerDesk"]),
+      ...mapGetters(["getBeerDesk","getSortList"]),
     },
     
     methods:{
