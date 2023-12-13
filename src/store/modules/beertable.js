@@ -15,7 +15,7 @@ export default{
         ],
         beerPhoto: false,
         sorted:false,
-        newArr:[]
+        newArr: "start"
 
     },
     getters: {
@@ -23,7 +23,11 @@ export default{
             return state.beerdesk
         },
         getSortList(state){
+        if(state.newArr == "start"){
+            return state.newArr = state.beerdesk
+        } else {
             return state.newArr
+        }
         }
     },
     mutations: {
@@ -40,27 +44,26 @@ export default{
         sortBeerTab(state,val){
             if(val == "name" || val== "type" || val == "alco" || val == "country"){
                 if(state.sorted == false){
-                    state.beerdesk.sort((a,b) => a[val] < b[val]? 1: -1)
+                    state.newArr.sort((a,b) => a[val] < b[val]? 1: -1)
                 state.sorted = true
                 } else if(state.sorted == true){
-                    state.beerdesk.sort((a,b) => a[val] < b[val]? -1: 1)
+                    state.newArr.sort((a,b) => a[val] < b[val]? -1: 1)
                 state.sorted = false
                 }
             }
             if(val == "design" || val=="soft" || val=="taste"){
                 if(state.sorted == false){
-                state.beerdesk.sort((a,b) =>(a[val].vit + a[val].evg) < (b[val].vit + b[val].evg)? 1: -1)
+                state.newArr.sort((a,b) =>(a[val].vit + a[val].evg) < (b[val].vit + b[val].evg)? 1: -1)
                 state.sorted = true
                 } else if(state.sorted == true){
-                    state.beerdesk.sort((a,b) =>(a[val].vit + a[val].evg) < (b[val].vit + b[val].evg)? -1: 1)
+                    state.newArr.sort((a,b) =>(a[val].vit + a[val].evg) < (b[val].vit + b[val].evg)? -1: 1)
                 state.sorted = false
                 }
             }   
 
         },
         searchBeer(state,searchVal){
-            state.newArr =  state.beerdesk.filter(e=>e.name.toLowerCase().includes(searchVal.toLowerCase()))
-            state.beerdesk = state.newArr
+            state.newArr = searchVal
         }
     },
     actions: {

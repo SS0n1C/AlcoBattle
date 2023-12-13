@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="beerTab__body"
-    v-for="(item, i) in getBeerDesk" :src="item.image"
+    v-for="(item, i) in getSortList" :src="item.image"
     :key="i">
     <div class="beerTab__body--item body-name" @click="getName(item)">
       {{ item.name }}
@@ -115,11 +115,11 @@ export default {
         item.taste.vit + item.taste.evg
     },
     getTitle(){
-      let newTest = []
-      this.getBeerDesk.map(e=> newTest = Object.keys(e))
-      newTest.shift()
-      newTest.pop()
-      return newTest
+      let newTtitle = []
+      this.getBeerDesk.map(e=> newTtitle = Object.keys(e))
+      newTtitle.shift()
+      newTtitle.pop()
+      return newTtitle
     },
     getName(item){
       this.showBeerPhoto = false
@@ -137,7 +137,8 @@ export default {
       this.show?this.show = false:this.show = true
     },
     Searching(){
-      this.searchBeer(this.searchTexts)
+      let getSearchData = this.getBeerDesk.filter(e=>e.name.toLowerCase().includes(this.searchTexts.toLowerCase()))
+      this.searchBeer(getSearchData)
     },
     }
 }
