@@ -133,7 +133,6 @@ body{
         &--name{
             @include flex;
             @include font($Agbalumo,400,14px,14px,black);
-            text-transform: uppercase;
 
             @include media($table){
                 font-size: 14px;
@@ -141,7 +140,7 @@ body{
             @include media($mobile){
                 font-size: 8px;
                 line-height: 10px;
-                text-transform: lowercase;
+                
             }
         }
         
