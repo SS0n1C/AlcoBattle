@@ -111,7 +111,7 @@ body{
             }
             @include media($mobile){
                 font-size: 10px;
-                margin: 0px;
+                margin: 5px 0px 5px 5px;
                 line-height: 15px;
             }
             &:hover{
@@ -162,10 +162,15 @@ body{
     &__body{
         width: 100%;
         display: grid;
-        grid-template: 1fr / repeat(8,  minmax(20px, 1fr));
+        grid-template: 1fr / repeat(8,  minmax(35px, 1fr));
         &:nth-child(even){
             background-color: burlywood;
-
+            border-left:2px $blueBtn solid;
+            border-right: 2px $blueBtn solid;
+        }
+        &:nth-child(odd){
+            border-left:2px burlywood solid;
+            border-right: 2px burlywood solid;
         }
         &--item{
             padding: 10px;
@@ -198,8 +203,9 @@ body{
                 font-size: 12px;
             }
             @include media($mobile){
-                font-size:8px;
+                font-size:7px;
                 word-wrap:normal;
+                padding-left: 3px;
             }
 
             &:hover{

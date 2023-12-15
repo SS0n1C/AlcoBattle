@@ -10,7 +10,8 @@
           v-model="searchTexts" 
           @keyup="Searching(searchTexts)"
           @click="closeSearch()"
-          @blur="searchTexts = ''">
+          @blur="searchTexts = ''"
+          autocomplete="off">
         </div>
         <div class="beerTab__find--button">
           <svg @click="Searching(searchTexts)">
