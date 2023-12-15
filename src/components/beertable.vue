@@ -9,7 +9,8 @@
           <input type="search" name="search" class="search__field" maxlength="15" 
           v-model="searchTexts" 
           @keyup="Searching(searchTexts)"
-          @click="test()">
+          @click="closeSearch()"
+          @blur="searchTexts = ''">
         </div>
         <div class="beerTab__find--button">
           <svg @click="Searching(searchTexts)">
@@ -143,9 +144,8 @@ export default {
       let getSearchData = this.getBeerDesk.filter(e=>e.name.toLowerCase().includes(this.searchTexts.toLowerCase()))
       this.searchBeer(getSearchData)
     },
-    test(){
-    let test  = this.searchTexts
-    console.log(test)
+    closeSearch(){
+      this.searchBeer(this.getBeerDesk)
     }
     }
 }
