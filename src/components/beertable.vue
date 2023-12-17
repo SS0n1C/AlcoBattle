@@ -1,5 +1,4 @@
 <template>
-<div class="conteiner">
   <section class="beerTab">
     <div class="beerTab__h">
       <h2>Beer Battle</h2>
@@ -91,7 +90,6 @@
     <div class="beerTab__body--item score">{{ getSum(item)}}</div>
     </div> 
   </section>
-</div>
 </template>
 
 <script>

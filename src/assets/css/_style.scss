@@ -1,2 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+body{
+    background-color:#7b031d;
+    overflow-x: auto;
+    height: 100%;
+}
+.conteiner{
+    @include conteiner(1200px);
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}

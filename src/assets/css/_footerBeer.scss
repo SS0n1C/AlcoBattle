@@ -1,0 +1,33 @@
+.footer{
+    background-color:black;
+    color:red;
+    border-radius: 20px;
+}
+.footerField{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+    &__logo{
+        &--place img{
+            width: 70px;
+            height: 60px;
+        }
+    }
+    &__info{
+        display: flex;
+        align-items: flex-end;
+        height: 80px;
+    }
+    &__social{
+        display: flex;
+        justify-content: space-between;
+        width: 130px;
+
+        &--item{
+            width: 20px;
+            height: 20px;
+            background-color: red;
+        }
+    }
+}
