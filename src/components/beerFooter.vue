@@ -12,17 +12,12 @@
             </div>
         </div>
         <div class="footerField__social">
-            <div class="footerField__social--item">
-
-            </div>
-            <div class="footerField__social--item">
-                
-            </div>
-            <div class="footerField__social--item">
-                
-            </div>
-            <div class="footerField__social--item">
-                
+            <div class="footerField__social--item" v-for="(social,i) in getAllSocial" :key="i">
+                <a :href="social.link" rel="noopener noreferrer">
+                    <svg>
+                        <use href="src/assets/images/sprite.svg#search"></use>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
@@ -30,8 +25,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-
+computed:{
+    ...mapGetters(["getAllSocial"])
+}
 }
 </script>
 
