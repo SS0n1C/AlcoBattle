@@ -14,8 +14,11 @@
         <div class="footerField__social">
             <div class="footerField__social--item" v-for="(social,i) in getAllSocial" :key="i">
                 <a :href="social.link" rel="noopener noreferrer">
+                    <!-- <svg>
+                        <use xlink:href="@/assets/img/sprite.svg#search"></use>  
+                    </svg> -->
                     <svg>
-                        <use href="src/assets/images/sprite.svg#search"></use>
+                        <use :xlink:href="social.icon"></use>
                     </svg>
                 </a>
             </div>
