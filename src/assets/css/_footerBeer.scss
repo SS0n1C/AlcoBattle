@@ -29,8 +29,13 @@
         &--item{
             width: 22px;
             height: 22px;
-            background-color: red;
+            background-color: $bloodRed;
             color: white;
+
+            &:hover{
+                background-color: white;
+                color:$bloodRed;
+            }
 
             & svg{
                 width: 22px;
