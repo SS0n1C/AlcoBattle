@@ -26,6 +26,11 @@
         padding-right: 50px;
         width: 200px;
 
+        @include media($mobile){
+            padding-right: 10px;
+            width: 110px;
+        }
+
         &--item{
             width: 22px;
             height: 22px;
