@@ -30,14 +30,17 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+    data(){
+        return {
+            
+        }
+    },
 computed:{
     ...mapGetters(["getAllSocial"])
 
 },
 methods:{
-    test(social){
-        console.log(social.icon)
-    }
+
 }
 }
 </script>
