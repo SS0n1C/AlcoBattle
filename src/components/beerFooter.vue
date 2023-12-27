@@ -8,7 +8,7 @@
         </div>
         <div class="footerField__info">
             <div class="footerField__info--txt">
-                Cop(C) 2023 
+                © 2010-2023
             </div>
         </div>
         <div class="footerField__social">
