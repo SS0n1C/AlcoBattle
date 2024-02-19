@@ -11,9 +11,6 @@
     margin: 10px 20px;
     @include media($mobile){
         margin-bottom: 0px;
-    }
-
-    @include media($mobile){
         display: grid;
         grid-template: repeat(3, auto) / 30% 70% ;
     }
@@ -52,15 +49,19 @@
             width: 70%;
             max-width: 200px;
             justify-content: space-around;
-            justify-self: end;
         }
 
         &--item{
-            width: 26px;
-            height: 26px;
+            width: 30px;
+            height: 30px;
             background-color: $bloodRed;
             color: white;
+            border-radius: 3px;
             @include flex;
+
+            & a{
+                @include flex;
+            }
 
             &:hover{
                 background-color: white;
@@ -68,10 +69,13 @@
             }
 
             & svg{
-                width: 20px;
-                height: 20px;
+                width: 22px;
+                height: 22px;
                 fill:black;
             }
         }
     }
+}
+.spriteContainer{
+    background-color: red;
 }

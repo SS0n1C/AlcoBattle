@@ -14,11 +14,8 @@
         <div class="footerField__social">
             <div class="footerField__social--item" v-for="(social,i) in getAllSocial" :key="i">
                 <a :href="social.link" rel="noopener noreferrer">
-                    <!-- <svg>
-                        <use xlink:href='../assets/img/sprite.svg#search'></use>  
-                    </svg> -->
                     <svg>
-                        <use :xlink:href=social.icon></use>
+                        <use :xlink:href="spriteWay+'#' + social.icon"></use>
                     </svg>
                 </a>
             </div>
@@ -29,10 +26,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import sprite from "@/assets/img/sprite.svg"
 export default {
     data(){
         return {
-            
+            spriteWay: ""
         }
     },
 computed:{
@@ -41,6 +39,16 @@ computed:{
 },
 methods:{
 
+},
+mounted() {
+    this.$nextTick(() => {
+      let spriteContainer = document.createElement('div');
+      spriteContainer.innerHTML = sprite;
+      document.body.appendChild(spriteContainer);
+      let e = spriteContainer.textContent || spriteContainer.innerText
+      this.spriteWay = e;
+      spriteContainer.remove()
+    });
 }
 }
 </script>
