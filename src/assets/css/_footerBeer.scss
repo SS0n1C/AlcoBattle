@@ -12,7 +12,7 @@
     @include media($mobile){
         margin-bottom: 0px;
         display: grid;
-        grid-template: repeat(3, auto) / 30% 70% ;
+        grid-template: repeat(4, auto) / 30% 70% ;
     }
 
     &__logo{
@@ -45,10 +45,11 @@
         @include media($mobile){
             padding-right: 10px;
             grid-column: 2 / 4;
-            grid-row: 1 / 2;
+            grid-row: 2 / 3;
             width: 70%;
-            max-width: 200px;
+            width: 210px;
             justify-content: space-around;
+            @include margb(20px);
         }
 
         &--item{
