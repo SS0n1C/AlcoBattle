@@ -41,7 +41,7 @@
       <div class="beerTab__person--name">
         Vit / Evg 
       </div>
-      <div class="beerTab__person--name name-score">
+      <div class="beerTab__person--name name-score" @click="getTop(item)">
         score
       </div>
     </div>
@@ -145,6 +145,9 @@ export default {
     },
     closeSearch(){
       this.searchBeer(this.getBeerDesk)
+    },
+    getTop(item){
+      console.log(this.getBeerDesk)
     }
     }
 }

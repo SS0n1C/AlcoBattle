@@ -72,7 +72,6 @@ export default{
                 state.sorted = false
                 }
             }   
-
         },
         searchBeer(state,searchVal){
             state.newArr = searchVal
