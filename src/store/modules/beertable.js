@@ -3,7 +3,7 @@ export default{
         beerdesk:[
             {id:0, name: "Grimbergen Blanche",type:"ligth", alco:"6%",country:"Poland", design:{vit:7, evg:7},soft:{vit:8,evg:9},taste:{vit:8,evg:8},image: require('@/assets/img/beerPhoto/GrimBlanch.jpg')},
             {id:1, name: "Sitnan",type:"ligth", alco:"5%",country:"Slovakia ", design:{vit:6, evg:6},soft:{vit:5,evg:4},taste:{vit:5,evg:4},image: require('@/assets/img/beerPhoto/sitnat.jpg')},
-            {id:2, name: "Mecklenburger",type:"wheat", alco:"5.1%",country:"German", design:{vit:4, evg:5},soft:{vit:8,evg:8},taste:{vit:9,evg:7},image: require(`@/assets/img/beerPhoto/mecklen.jpg`)},
+            {id:2, name: "Mecklenburger",type:"wheat", alco:"5.1%",country:"German", design:{vit:4, evg:5},soft:{vit:8,evg:8},taste:{vit:9,evg:7},image: require(`@/assets/img/beerPhoto/mecklen.jpg`),},
             {id:3, name: "Xibeca damm",type:"ligth", alco:"4.6%",country:"Spain", design:{vit:6, evg:6},soft:{vit:6,evg:7},taste:{vit:7,evg:7},image: require("@/assets/img/beerPhoto/xibeca.jpg")},
             {id:4, name: "Royal Witbier",type:"ligth", alco:"5.2%",country:"Denmark", design:{vit:5, evg:6},soft:{vit:10,evg:9},taste:{vit:8,evg:8},image: require("@/assets/img/beerPhoto/royal.jpg")},
             {id:5, name: "Zubr",type:"ligth", alco:"4.1%",country:"Czech", design:{vit:4, evg:5},soft:{vit:6,evg:6},taste:{vit:5,evg:6},image: require("@/assets/img/placeholder.jpg")},
@@ -27,7 +27,7 @@ export default{
         ],
         beerPhoto: false,
         sorted:false,
-        newArr: "start"
+        newArr: "start",
 
     },
     getters: {
@@ -40,7 +40,7 @@ export default{
         } else {
             return state.newArr
         }
-        }
+        },
     },
     mutations: {
         openbeerPhoto(state){
@@ -75,7 +75,26 @@ export default{
         },
         searchBeer(state,searchVal){
             state.newArr = searchVal
-        }
+        },
+        sortBeersByTotalSum(state) {
+            if(state.sorted == false){
+            state.beerdesk.sort((a, b) => {
+              const sumA = a.soft.vit + a.soft.evg + a.taste.vit + a.taste.evg + a.design.vit + a.design.evg;
+              const sumB = b.soft.vit + b.soft.evg + b.taste.vit + b.taste.evg + b.design.vit + b.design.evg;
+                return sumB - sumA; 
+              })
+            return state.sorted = true
+            };
+            if(state.sorted == true){
+            state.beerdesk.sort((a, b) => {
+                const sumA = a.soft.vit + a.soft.evg + a.taste.vit + a.taste.evg + a.design.vit + a.design.evg;
+                const sumB = b.soft.vit + b.soft.evg + b.taste.vit + b.taste.evg + b.design.vit + b.design.evg;
+                    return sumA - sumB; 
+                })
+            return state.sorted = false
+            }
+          },
+        
     },
     actions: {
     },

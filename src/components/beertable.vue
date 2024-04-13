@@ -41,7 +41,7 @@
       <div class="beerTab__person--name">
         Vit / Evg 
       </div>
-      <div class="beerTab__person--name name-score" @click="getTop(item)">
+      <div class="beerTab__person--name name-score" @click="getPointSort()">
         score
       </div>
     </div>
@@ -112,15 +112,15 @@ export default {
     },
     
     methods:{
-      ...mapMutations(["closeBeerPhoto","sortBeerTab","searchBeer"]),
+      ...mapMutations(["closeBeerPhoto","sortBeerTab","searchBeer","sortBeersByTotalSum"]),
       getSum(item){
-        return item.design.evg + item.design.evg + item.soft.vit + item.soft.evg +
-        item.taste.vit + item.taste.evg
+        return item.design.vit + item.design.evg +item.taste.vit + item.taste.evg + item.soft.vit + item.soft.evg
     },
     getTitle(){
       let newTtitle = []
       this.getBeerDesk.map(e=> newTtitle = Object.keys(e))
       newTtitle.shift()
+      newTtitle.pop()
       newTtitle.pop()
       return newTtitle
     },
@@ -146,9 +146,9 @@ export default {
     closeSearch(){
       this.searchBeer(this.getBeerDesk)
     },
-    getTop(item){
-      console.log(this.getBeerDesk)
-    }
+    getPointSort(){
+      this.sortBeersByTotalSum()
+    },
     }
 }
 </script>
