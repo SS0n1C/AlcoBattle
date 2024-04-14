@@ -1,7 +1,7 @@
 <template>
   <section class="beerTab">
     <div class="beerTab__h">
-      <h2>Beer Battle</h2>
+      <h2 ref="yourAnchorId">Beer Battle</h2>
     </div>
     <div class="beerTab__find">
       <div class="beerTab__find--field">
@@ -51,7 +51,7 @@
     <div class="beerTab__body--item body-name" @click="getName(item)">
       {{ item.name }}
     </div>
-    <div class="beerTab__body--item">
+    <div class="beerTab__body--item" @click="toTop()">
       {{ item.type }}
     </div>
     <div class="beerTab__body--item">
@@ -129,7 +129,14 @@ export default {
       this.getPh = item.image
       this.showBeerPhoto = true
       this.show = false
+      this.toTop()
     },
+    toTop(){
+      const element = this.$refs.yourAnchorId;
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, null, window.location.pathname);
+    },
+
     closeBeerPh(){
       this.showBeerPhoto = false
     },
